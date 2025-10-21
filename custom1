@@ -1,0 +1,219 @@
+
+<!DOCTYPE=html>
+<html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whisked Away</title>
+</head>
+<header>
+  <img src="jimbob.png" alt="Whisked Away Logo" style="height:80px; margin-right:20px;">
+  <div>
+    <h1>Whisked Away</h1>
+    <p>Delighting taste buds, one whisk at a time</p>
+  </div>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="products.html">Products</a>
+  <a href="custom.html">Custom Cakes</a>
+  <a href="contact.html">Contact</a>
+  <a href="admin.html">Admin</a>
+</nav>
+<section id="custom-cake" class="custom-cake">
+    <h2>
+        Build Your Dream Cake
+        <span style="position:relative; cursor:pointer; color:#003366; font-weight:bold;">
+            *
+            <span style="
+                visibility:hidden;
+                width:300px;
+                background-color:#66b3ff;
+                color:white;
+                text-align:left;
+                padding:10px;
+                border-radius:5px;
+                position:absolute;
+                z-index:1;
+                top:25px;
+                left:0;
+            ">
+                Choose your main cake base, (there are over 50 options to choose from!), then your flavour, and finally, your size. Make sure you include your e-mail in the message, so we can contact you about payment, and delivery dates. We try to respond within 3 working days, so hopefully you'll hear from us soon!
+            </span>
+        </span>
+    </h2>
+    <p>Customize your cake to perfection!</p>
+    <!-- Your form goes here -->
+</section>
+
+<script>
+// Tooltip hover functionality
+const tooltip = document.querySelectorAll('section#custom-cake h2 span');
+tooltip.forEach(span => {
+    span.addEventListener('mouseenter', function() {
+        this.querySelector('span').style.visibility = 'visible';
+    });
+    span.addEventListener('mouseleave', function() {
+        this.querySelector('span').style.visibility = 'hidden';
+    });
+});
+</script>
+
+<section id="custom-cake" class="custom-cake">
+    <form id="cake-form">
+        <!-- Cake Type -->
+        <label for="cake-type">Cake Type:</label><br>
+        <select id="cake-type" name="cake-type" required>
+            <option value="">--Select Cake--</option>
+            <option value="sponge">Sponge Cake</option>
+            <option value="chocolate">Chocolate Cake</option>
+            <option value="redvelvet">Red Velvet Cake</option>
+            <option value="carrot">Carrot Cake</option>
+            <option value="banana">Banana Cake</option>
+            <option value="lemon">Lemon Cake</option>
+            <option value="coffee">Coffee Cake</option>
+            <option value="matcha">Matcha Cake</option>
+            <option value="pistachio">Pistachio Cake</option>
+            <option value="almond">Almond Cake</option>
+            <option value="hazelnut">Hazelnut Cake</option>
+            <option value="coconut">Coconut Cake</option>
+            <option value="mango">Mango Cake</option>
+            <option value="passionfruit">Passionfruit Cake</option>
+            <option value="peach">Peach Cake</option>
+            <option value="apricot">Apricot Cake</option>
+            <option value="pear">Pear Cake</option>
+            <option value="apple">Apple Cake</option>
+            <option value="blueberry">Blueberry Cake</option>
+            <option value="raspberry">Raspberry Cake</option>
+            <option value="strawberry">Strawberry Cake</option>
+            <option value="blackberry">Blackberry Cake</option>
+            <option value="cherry">Cherry Cake</option>
+            <option value="kiwi">Kiwi Cake</option>
+            <option value="grape">Grape Cake</option>
+            <option value="melon">Melon Cake</option>
+            <option value="papaya">Papaya Cake</option>
+            <option value="lychee">Lychee Cake</option>
+            <option value="cantaloupe">Cantaloupe Cake</option>
+            <option value="watermelon">Watermelon Cake</option>
+            <option value="fig">Fig Cake</option>
+            <option value="plum">Plum Cake</option>
+            <option value="apricot">Apricot Cake</option>
+            <option value="nectarine">Nectarine Cake</option>
+            <option value="tangerine">Tangerine Cake</option>
+            <option value="grapefruit">Grapefruit Cake</option>
+            <option value="pomegranate">Pomegranate Cake</option>
+            <option value="papaya">Papaya Cake</option>
+            <option value="dragonfruit">Dragonfruit Cake</option>
+            <option value="starfruit">Starfruit Cake</option>
+            <option value="jackfruit">Jackfruit Cake</option>
+            <option value="durian">Durian Cake</option>
+            <option value="custard">Custard Cake</option>
+            <option value="frangipane">Frangipane Cake</option>
+            <option value="biscoff">Biscoff Cake</option>
+            <option value="nutella">Nutella Cake</option>
+            <option value="peanutbutter">Peanut Butter Cake</option>
+            <option value="chocolatehazelnut">Chocolate Hazelnut Cake</option>
+            <option value="chocolatemint">Chocolate Mint Cake</option>
+            <option value="chocolatestout">Chocolate Stout Cake</option>
+            <option value="chocolateorange">Chocolate Orange Cake</option>
+            <option value="chocolatecherry">Chocolate Cherry Cake</option>
+            <option value="chocolatepeanutbutter">Chocolate Peanut Butter Cake</option>
+            <option value="chocolatecaramel">Chocolate Caramel Cake</option>
+            <option value="chocolatemarshmallow">Chocolate Marshmallow Cake</option>
+            <option value="chocolatecoconut">Chocolate Coconut Cake</option>
+            <option value="chocolatebanana">Chocolate Banana Cake</option>
+            <option value="chocolatestrawberry">Chocolate Strawberry Cake</option>
+        </select><br><br>
+
+        <!-- Flavour -->
+        <label for="flavour">Flavour:</label><br>
+        <select id="flavour" name="flavour" required>
+            <option value="">--Select Flavour--</option>
+            <option value="vanilla">Vanilla</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="caramel">Caramel</option>
+            <option value="coconut">Coconut</option>
+            <option value="whitechocolate">White Chocolate</option>
+            <option value="strawberry">Strawberry</option>
+            <option value="raspberry">Raspberry</option>
+            <option value="blueberry">Blueberry</option>
+            <option value="blackberry">Blackberry</option>
+            <option value="lemon">Lemon</option>
+            <option value="lime">Lime</option>
+            <option value="orange">Orange</option>
+            <option value="mango">Mango</option>
+            <option value="passionfruit">Passionfruit</option>
+            <option value="peach">Peach</option>
+            <option value="apricot">Apricot</option>
+            <option value="pear">Pear</option>
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="kiwi">Kiwi</option>
+            <option value="grape">Grape</option>
+            <option value="melon">Melon</option>
+            <option value="papaya">Papaya</option>
+            <option value="lychee">Lychee</option>
+            <option value="cantaloupe">Cantaloupe</option>
+            <option value="watermelon">Watermelon</option>
+            <option value="fig">Fig</option>
+            <option value="plum">Plum</option>
+            <option value="nectarine">Nectarine</option>
+            <option value="tangerine">Tangerine</option>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="pomegranate">Pomegranate</option>
+            <option value="papaya">Papaya</option>
+            <option value="dragonfruit">Dragonfruit</option>
+            <option value="starfruit">Starfruit</option>
+            <option value="jackfruit">Jackfruit</option>
+            <option value="durian">Durian</option>
+            <option value="custard">Custard</option>
+            <option value="frangipane">Frangipane</option>
+            <option value="biscoff">Biscoff</option>
+            <option value="nutella">Nutella</option>
+            <option value="peanutbutter">Peanut Butter</option>
+            <option value="chocolatehazelnut">Chocolate Hazelnut</option>
+            <option value="chocolatemint">Chocolate Mint</option>
+            <option value="chocolatestout">Chocolate Stout</option>
+            <option value="chocolateorange">Chocolate Orange</option>
+            <option value="chocolatecherry">Chocolate Cherry</option>
+            <option value="chocolatepeanutbutter">Chocolate Peanut Butter</option>
+            <option value="chocolatecaramel">Chocolate Caramel</option>
+            <option value="chocolatemarshmallow">Chocolate Marshmallow</option>
+            <option value="chocolatecoconut">Chocolate Coconut</option>
+            <option value="chocolatebanana">Chocolate Banana</option>
+            <option value="chocolatestrawberry">Chocolate Strawberry</option>
+        </select><br><br>
+
+        <!-- Size -->
+        <label for="size">Size:</label><br>
+        <select id="size" name="size" required>
+            <option value="">--Select Size--</option>
+            <option value="6">6 inch</option>
+            <option value="8">8 inch</option>
+            <option value="10">10 inch</option>
+            <option value="12">12 inch</option>
+            <option value="14">14 inch</option>
+            <option value="16">16 inch</option>
+            <option value="18">18 inch</option>
+            <option value="20">20 inch</option>
+	    <option value="cupcakex12">Cupcake (12 Cakes)</option>
+	    <option value="cupcakex24">Cupcake (24 Cakes)</option>
+            <option value="cupcakex30">Cupcake (30 Cakes)</option>
+	    <option value="tiered2">Tiered (2 Layers)</option>
+            <option value="tiered3">Tiered (3 Layers)</option>
+        </select><br><br>
+
+        <!-- Additional Notes -->
+        <label for="notes">Additional Notes:</label><br>
+        <textarea id="notes" name="notes" placeholder="Please include your e-mail so we can contact you about your cake..."></textarea><br><br>
+
+        <!-- Quote Display -->
+        <div id="quote"></div><br><br>
+
+        <button type="submit">Submit Your Custom Cake</button>
+    </form>
+</section>
