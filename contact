@@ -1,0 +1,84 @@
+<html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Whisked Away</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="jimbob.png" alt="Whisked Away logo">
+      <div>
+        <h1>Whisked Away</h1>
+        <p>Delighting taste buds, one whisk at a time</p>
+      </div>
+    </div>
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" data-page="index.html">Home</a>
+      <a href="about.html" data-page="about.html">About</a>
+      <a href="products.html" data-page="products.html">Products</a>
+      <a href="custom.html" data-page="custom.html">Build a Cake</a>
+      <a href="contact.html" data-page="contact.html">Contact</a>
+      <a href="admin.html" data-page="admin.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card center">
+    <h2>Contact Us</h2>
+    <p class="kicker">Prefer email for orders — include the date you need the cake and an approximate guest count.</p>
+
+    <p style="margin:8px 0;"><strong>Phone:</strong> 07482 020099</p>
+    <p style="margin:8px 0;"><strong>Email:</strong> <a href="mailto:RainerC12@outlook.com">RainerC12@outlook.com</a></p>
+
+    <hr style="margin:18px 0;">
+
+    <h3>Quick message</h3>
+    <form id="contact-form">
+      <div class="form-row">
+        <input id="contact-name" type="text" placeholder="Your name" required>
+      </div>
+      <div class="form-row">
+        <input id="contact-email" type="email" placeholder="Email" required>
+      </div>
+      <div class="form-row">
+        <textarea id="contact-message" placeholder="Message / order details..." required></textarea>
+      </div>
+      <div class="form-row">
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </div>
+    </form>
+
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    &copy; 2025 Whisked Away
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  // store a local copy so admin can see it via the admin page
+  const messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+  messages.push({
+    name: document.getElementById('contact-name').value,
+    email: document.getElementById('contact-email').value,
+    message: document.getElementById('contact-message').value,
+    sentAt: new Date().toISOString()
+  });
+  localStorage.setItem('contactMessages', JSON.stringify(messages));
+  alert('Message saved locally. We will email you from RainerC12@outlook.com when we reply.');
+  this.reset();
+});
+</script>
+</body>
+</html>
