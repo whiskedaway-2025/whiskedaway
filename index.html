@@ -1,108 +1,529 @@
-<html>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Whisked Away — Home</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whisked Away</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e6f0ff;
+            color: #003366;
+        }
+
+        header {
+            background-color: #3399ff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-family: 'Cursive', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #66b3ff;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 15px 0;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .about, .products, .contact {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .products .item {
+            display: inline-block;
+            margin: 15px;
+            width: 200px;
+        }
+
+        .products img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #003366;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #66b3ff;
+            color: white;
+        }
+
+        form input, form textarea {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #003366;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #3399ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #66b3ff;
+        }
+
+        footer {
+            background-color: #3399ff;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-
-<header class="site-header" role="banner">
-  <div class="header-inner">
-    <div class="brand">
-      <img src="jimbob.png" alt="Whisked Away logo">
-      <div>
-        <h1>Whisked Away</h1>
-        <p>Delighting taste buds, one whisk at a time</p>
-      </div>
+<header style="display:flex; align-items:center; justify-content:center; background-color:#3399ff; color:white; padding:20px;">
+    <img src="jimbob.png" alt="Whisked Away Logo" style="height:80px; margin-right:20px;">
+    <div style="text-align:left;">
+        <h1 style="margin:0; font-size:2.5rem; font-family:'Cursive', american-typewriter;">Whisked Away</h1>
+        <p style="margin:0;">Delighting taste buds, one whisk at a time</p>
     </div>
-
-    <nav class="site-nav" role="navigation" aria-label="Main navigation">
-      <a href="index.html" data-page="index.html">Home</a>
-      <a href="about.html" data-page="about.html">About</a>
-      <a href="products.html" data-page="products.html">Products</a>
-      <a href="custom.html" data-page="custom.html">Build a Cake</a>
-      <a href="contact.html" data-page="contact.html">Contact</a>
-      <a href="admin.html" data-page="admin.html">Admin</a>
-    </nav>
-  </div>
 </header>
 
-<main class="container">
-  <section class="hero card">
-    <div class="hero-grid">
-      <div class="hero-left">
-        <p class="kicker">Home-baked in Forres</p>
-        <h2>Fresh cakes, seasonal flavours, and custom builds you actually want to eat.</h2>
-        <p>Handmade by Rainer — party cakes, cupcakes, brownies, and bespoke orders for events across Moray. We keep things simple: proper flavour, proper portions.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="products.html">See Menu</a>
-          <a class="btn btn-outline" href="custom.html">Build Your Cake</a>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Whisked Away is a home-baked adventure, created and owned by 13 year old Rainer! Established in August 2024, we started making cakes for parties, and then, in June 2025, we did our first major event in Burghead, Scotland, for a Craft Fair! Have a look at our current ranges below, or make your own cake with the custom cake builder! </p>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Our Featured Range:</h2>
+	<h3><u>Autumn Classics</u></h3>
+        <div class="item">
+            <p>Apple Crumble & Custard Cupcakes</p>
         </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="card" style="width:300px; text-align:center;">
-          <img src="jimbob.png" alt="logo large" style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
-          <p style="margin:10px 0 0 0; font-weight:700;">Featured — Lotus Biscoff Drip</p>
+        <div class="item">
+            <p>Lotus Biscoff & White Chocolate Drip Cake</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="margin-top:20px;">
-    <div class="card">
-      <h3 style="margin-top:0;">Why choose us?</h3>
-      <div class="row">
-        <div style="flex:1;">
-          <h4 style="margin-bottom:6px;">Local ingredients</h4>
-          <p class="kicker">We source what’s in season and keep the tastes honest.</p>
+        <div class="item">
+            <p>Classic Sponge</p>
         </div>
-        <div style="flex:1;">
-          <h4 style="margin-bottom:6px;">Event experience</h4>
-          <p class="kicker">Craft fair stall (June 2025) and party orders — we know how to feed a crowd.</p>
+        <div class="item">
+            <p>Ultimate Brownies</p>
         </div>
-        <div style="flex:1;">
-          <h4 style="margin-bottom:6px;">Customisable</h4>
-          <p class="kicker">Over 50 base options in the builder. Tell us what you want.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section style="margin-top:18px;">
-    <h3 class="kicker center">Featured Range</h3>
+        <h3>Allergens</h3>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Contains</th>
+            </tr>
+            <tr>
+                <td>Apple Crumble & Custard Cupcakes</td>
+                <td>Eggs, Milk, Wheat, Nuts</td>
+            </tr>
+            <tr>
+                <td>Lotus Biscoff & White Chocolate Drip Cake</td>
+                <td>Eggs, Milk, Wheat, Soya</td>
+            </tr>
+            <tr>
+                <td>Classic Sponge</td>
+                <td>Eggs, Milk, Wheat</td>
+            </tr>
+            <tr>
+                <td>Ultimate Brownies</td>
+                <td>Eggs, Milk, Wheat, Nuts</td>
+            </tr>
+        </table>
+    </section>
+<section id="custom-cake" class="custom-cake">
+    <h2>
+        Build Your Dream Cake
+        <span style="position:relative; cursor:pointer; color:#003366; font-weight:bold;">
+            *
+            <span style="
+                visibility:hidden;
+                width:300px;
+                background-color:#66b3ff;
+                color:white;
+                text-align:left;
+                padding:10px;
+                border-radius:5px;
+                position:absolute;
+                z-index:1;
+                top:25px;
+                left:0;
+            ">
+                Choose your main cake base, (there are over 50 options to choose from!), then your flavour, and finally, your size. Make sure you include your e-mail in the message, so we can contact you about payment, and delivery dates. We try to respond within 3 working days, so hopefully you'll hear from us soon!
+            </span>
+        </span>
+    </h2>
+    <p>Customize your cake to perfection!</p>
+    <!-- Your form goes here -->
+</section>
 
-    <div class="product-grid" style="margin-top:12px;">
-      <div class="product card">
-        <img src="apple-cupcakes.jpg" alt="Apple Crumble Cupcakes">
-        <p>Apple Crumble & Custard Cupcakes</p>
-      </div>
-      <div class="product card">
-        <img src="biscoff-cake.jpg" alt="Lotus Biscoff Drip Cake">
-        <p>Lotus Biscoff & White Chocolate Drip</p>
-      </div>
-      <div class="product card">
-        <img src="sponge.jpg" alt="Classic Sponge">
-        <p>Classic Sponge</p>
-      </div>
-      <div class="product card">
-        <img src="brownie.jpg" alt="Ultimate Brownies">
-        <p>Ultimate Brownies</p>
-      </div>
-    </div>
-  </section>
+<script>
+// Tooltip hover functionality
+const tooltip = document.querySelectorAll('section#custom-cake h2 span');
+tooltip.forEach(span => {
+    span.addEventListener('mouseenter', function() {
+        this.querySelector('span').style.visibility = 'visible';
+    });
+    span.addEventListener('mouseleave', function() {
+        this.querySelector('span').style.visibility = 'hidden';
+    });
+});
+</script>
 
-</main>
+<section id="custom-cake" class="custom-cake">
+    <form id="cake-form">
+        <!-- Cake Type -->
+        <label for="cake-type">Cake Type:</label><br>
+        <select id="cake-type" name="cake-type" required>
+            <option value="">--Select Cake--</option>
+            <option value="sponge">Sponge Cake</option>
+            <option value="chocolate">Chocolate Cake</option>
+            <option value="redvelvet">Red Velvet Cake</option>
+            <option value="carrot">Carrot Cake</option>
+            <option value="banana">Banana Cake</option>
+            <option value="lemon">Lemon Cake</option>
+            <option value="coffee">Coffee Cake</option>
+            <option value="matcha">Matcha Cake</option>
+            <option value="pistachio">Pistachio Cake</option>
+            <option value="almond">Almond Cake</option>
+            <option value="hazelnut">Hazelnut Cake</option>
+            <option value="coconut">Coconut Cake</option>
+            <option value="mango">Mango Cake</option>
+            <option value="passionfruit">Passionfruit Cake</option>
+            <option value="peach">Peach Cake</option>
+            <option value="apricot">Apricot Cake</option>
+            <option value="pear">Pear Cake</option>
+            <option value="apple">Apple Cake</option>
+            <option value="blueberry">Blueberry Cake</option>
+            <option value="raspberry">Raspberry Cake</option>
+            <option value="strawberry">Strawberry Cake</option>
+            <option value="blackberry">Blackberry Cake</option>
+            <option value="cherry">Cherry Cake</option>
+            <option value="kiwi">Kiwi Cake</option>
+            <option value="grape">Grape Cake</option>
+            <option value="melon">Melon Cake</option>
+            <option value="papaya">Papaya Cake</option>
+            <option value="lychee">Lychee Cake</option>
+            <option value="cantaloupe">Cantaloupe Cake</option>
+            <option value="watermelon">Watermelon Cake</option>
+            <option value="fig">Fig Cake</option>
+            <option value="plum">Plum Cake</option>
+            <option value="apricot">Apricot Cake</option>
+            <option value="nectarine">Nectarine Cake</option>
+            <option value="tangerine">Tangerine Cake</option>
+            <option value="grapefruit">Grapefruit Cake</option>
+            <option value="pomegranate">Pomegranate Cake</option>
+            <option value="papaya">Papaya Cake</option>
+            <option value="dragonfruit">Dragonfruit Cake</option>
+            <option value="starfruit">Starfruit Cake</option>
+            <option value="jackfruit">Jackfruit Cake</option>
+            <option value="durian">Durian Cake</option>
+            <option value="custard">Custard Cake</option>
+            <option value="frangipane">Frangipane Cake</option>
+            <option value="biscoff">Biscoff Cake</option>
+            <option value="nutella">Nutella Cake</option>
+            <option value="peanutbutter">Peanut Butter Cake</option>
+            <option value="chocolatehazelnut">Chocolate Hazelnut Cake</option>
+            <option value="chocolatemint">Chocolate Mint Cake</option>
+            <option value="chocolatestout">Chocolate Stout Cake</option>
+            <option value="chocolateorange">Chocolate Orange Cake</option>
+            <option value="chocolatecherry">Chocolate Cherry Cake</option>
+            <option value="chocolatepeanutbutter">Chocolate Peanut Butter Cake</option>
+            <option value="chocolatecaramel">Chocolate Caramel Cake</option>
+            <option value="chocolatemarshmallow">Chocolate Marshmallow Cake</option>
+            <option value="chocolatecoconut">Chocolate Coconut Cake</option>
+            <option value="chocolatebanana">Chocolate Banana Cake</option>
+            <option value="chocolatestrawberry">Chocolate Strawberry Cake</option>
+        </select><br><br>
 
-<footer class="site-footer">
-  <div class="container">
-    &copy; 2025 Whisked Away • Phone: 07482020099 • <a href="mailto:RainerC12@outlook.com" style="color:rgba(255,255,255,0.95); text-decoration:underline;">RainerC12@outlook.com</a>
-  </div>
-</footer>
+        <!-- Flavour -->
+        <label for="flavour">Flavour:</label><br>
+        <select id="flavour" name="flavour" required>
+            <option value="">--Select Flavour--</option>
+            <option value="vanilla">Vanilla</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="caramel">Caramel</option>
+            <option value="coconut">Coconut</option>
+            <option value="whitechocolate">White Chocolate</option>
+            <option value="strawberry">Strawberry</option>
+            <option value="raspberry">Raspberry</option>
+            <option value="blueberry">Blueberry</option>
+            <option value="blackberry">Blackberry</option>
+            <option value="lemon">Lemon</option>
+            <option value="lime">Lime</option>
+            <option value="orange">Orange</option>
+            <option value="mango">Mango</option>
+            <option value="passionfruit">Passionfruit</option>
+            <option value="peach">Peach</option>
+            <option value="apricot">Apricot</option>
+            <option value="pear">Pear</option>
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="kiwi">Kiwi</option>
+            <option value="grape">Grape</option>
+            <option value="melon">Melon</option>
+            <option value="papaya">Papaya</option>
+            <option value="lychee">Lychee</option>
+            <option value="cantaloupe">Cantaloupe</option>
+            <option value="watermelon">Watermelon</option>
+            <option value="fig">Fig</option>
+            <option value="plum">Plum</option>
+            <option value="nectarine">Nectarine</option>
+            <option value="tangerine">Tangerine</option>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="pomegranate">Pomegranate</option>
+            <option value="papaya">Papaya</option>
+            <option value="dragonfruit">Dragonfruit</option>
+            <option value="starfruit">Starfruit</option>
+            <option value="jackfruit">Jackfruit</option>
+            <option value="durian">Durian</option>
+            <option value="custard">Custard</option>
+            <option value="frangipane">Frangipane</option>
+            <option value="biscoff">Biscoff</option>
+            <option value="nutella">Nutella</option>
+            <option value="peanutbutter">Peanut Butter</option>
+            <option value="chocolatehazelnut">Chocolate Hazelnut</option>
+            <option value="chocolatemint">Chocolate Mint</option>
+            <option value="chocolatestout">Chocolate Stout</option>
+            <option value="chocolateorange">Chocolate Orange</option>
+            <option value="chocolatecherry">Chocolate Cherry</option>
+            <option value="chocolatepeanutbutter">Chocolate Peanut Butter</option>
+            <option value="chocolatecaramel">Chocolate Caramel</option>
+            <option value="chocolatemarshmallow">Chocolate Marshmallow</option>
+            <option value="chocolatecoconut">Chocolate Coconut</option>
+            <option value="chocolatebanana">Chocolate Banana</option>
+            <option value="chocolatestrawberry">Chocolate Strawberry</option>
+        </select><br><br>
 
-<script src="script.js"></script>
+        <!-- Size -->
+        <label for="size">Size:</label><br>
+        <select id="size" name="size" required>
+            <option value="">--Select Size--</option>
+            <option value="6">6 inch</option>
+            <option value="8">8 inch</option>
+            <option value="10">10 inch</option>
+            <option value="12">12 inch</option>
+            <option value="14">14 inch</option>
+            <option value="16">16 inch</option>
+            <option value="18">18 inch</option>
+            <option value="20">20 inch</option>
+	    <option value="cupcakex12">Cupcake (12 Cakes)</option>
+	    <option value="cupcakex24">Cupcake (24 Cakes)</option>
+            <option value="cupcakex30">Cupcake (30 Cakes)</option>
+	    <option value="tiered2">Tiered (2 Layers)</option>
+            <option value="tiered3">Tiered (3 Layers)</option>
+        </select><br><br>
+
+        <!-- Additional Notes -->
+        <label for="notes">Additional Notes:</label><br>
+        <textarea id="notes" name="notes" placeholder="Please include your e-mail so we can contact you about your cake..."></textarea><br><br>
+
+        <!-- Quote Display -->
+        <div id="quote"></div><br><br>
+
+        <button type="submit">Submit Your Custom Cake</button>
+    </form>
+</section>
+
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: 07482020099</p>
+        <p>Email: <a href="mailto:RainerC12@outlook.com">RainerC12@outlook.com</a></p>
+
+    </section>
+
+   
+<script>
+document.getElementById('cake-form').addEventListener('change', function() {
+    const basePrice = 15; // base price in £
+    const markup = 1.7; // 170%
+    
+    // Get size multiplier
+    const size = document.getElementById('size').value;
+    let sizeMultiplier = 1;
+    if (size == "8") sizeMultiplier = 1.5;
+    else if (size == "10") sizeMultiplier = 2;
+    else if (size == "12") sizeMultiplier = 2.5;
+    else if (size == "14") sizeMultiplier = 3;
+    else if (size == "16") sizeMultiplier = 3.3;
+    else if (size == "18") sizeMultiplier = 3.5;
+    else if (size == "20") sizeMultiplier = 4;
+    else if (size == "cupcakex12") sizeMultiplier = 1.5;
+    else if (size == "cupcakex24") sizeMultiplier = 2.5;
+    else if (size == "cupcakex30") sizeMultiplier = 3.2;
+    else if (size == "tiered2") sizeMultiplier = 2.7;
+    else if (size == "tiered3") sizeMultiplier = 3.5;
+    // Extras cost
+    const extras = document.querySelectorAll('input[name="extras"]:checked');
+    const extrasCost = extras.length * 3; // £3 per extra
+
+    const finalPrice = ((basePrice * sizeMultiplier + extrasCost) * markup).toFixed(2);
+
+    document.getElementById('quote').innerHTML = `<strong>Estimated Price: £${finalPrice}</strong>`;
+});
+</script>
+<!-- Admin Login Section -->
+<section id="admin-login" class="admin-login" style="padding:50px; text-align:center; background:#cce0ff; margin-top:50px;">
+    <h2>Admin Login</h2>
+    <p>Enter your password to see customer requests:</p>
+    <input type="password" id="admin-password" placeholder="Password"><br><br>
+    <button id="login-btn">Login</button>
+    <div id="login-message" style="margin-top:10px; color:red;"></div>
+
+   <div id="customer-requests" style="display:none; margin-top:30px;">
+    <h3>Customer Requests</h3>
+    <ul id="requests-list" style="text-align:left; max-width:600px; margin:0 auto;"></ul>
+    <br>
+    <button id="clear-requests" style="background:#ff6666; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">
+        Clear All Requests
+    </button>
+</div>
+<div id="customer-requests" style="display:none; margin-top:30px;">
+    <h3>Customer Requests</h3>
+    <ul id="requests-list" style="text-align:left; max-width:600px; margin:0 auto;"></ul>
+    <br>
+    <button id="clear-requests" style="background:#ff6666; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">
+        Clear All Requests
+    </button>
+    <button id="logout-btn" style="background:#9999ff; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer; margin-left:10px;">
+        Log Out
+    </button>
+</div>
+
+</section>
+
+<script>
+// Password setup
+const adminPassword = "abc123";
+
+// Login button
+document.getElementById('login-btn').addEventListener('click', function() {
+    const input = document.getElementById('admin-password').value;
+    const message = document.getElementById('login-message');
+    const requestsDiv = document.getElementById('customer-requests');
+    const requestsList = document.getElementById('requests-list');
+
+    if(input === adminPassword){
+        message.style.color = "green";
+        message.textContent = "Access Granted!";
+        requestsDiv.style.display = "block";
+
+        // Show stored requests from localStorage
+        requestsList.innerHTML = "";
+        let submissions = JSON.parse(localStorage.getItem('cakeSubmissions') || "[]");
+        if(submissions.length === 0){
+            requestsList.innerHTML = "<li>No submissions yet.</li>";
+        } else {
+            submissions.forEach((req, i) => {
+                requestsList.innerHTML += `<li><strong>Request ${i+1}:</strong> ${req}</li>`;
+            });
+        }
+    } else {
+        message.style.color = "red";
+        message.textContent = "Wrong Password!";
+        requestsDiv.style.display = "none";
+    }
+});
+
+// Save cake submissions to localStorage (from your cake builder form)
+document.getElementById('cake-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const cakeType = document.getElementById('cake-type').value;
+    const flavour = document.getElementById('flavour').value;
+    const size = document.getElementById('size').value;
+    const extras = Array.from(document.querySelectorAll('input[name="extras"]:checked')).map(e => e.value).join(", ");
+    const notes = document.getElementById('notes').value;
+
+    const submission = `Type: ${cakeType}, Flavour: ${flavour}, Size: ${size}, Extras: ${extras}, Notes: ${notes}`;
+    let submissions = JSON.parse(localStorage.getItem('cakeSubmissions') || "[]");
+    submissions.push(submission);
+    localStorage.setItem('cakeSubmissions', JSON.stringify(submissions));
+
+    alert("Your request has been saved!");
+    this.reset();
+    document.getElementById('quote').innerHTML = "";
+});
+</script>
+<script>
+document.getElementById('clear-requests').addEventListener('click', function() {
+    if (confirm("Are you sure you want to clear all customer requests? This cannot be undone.")) {
+        localStorage.removeItem('cakeSubmissions');
+        document.getElementById('requests-list').innerHTML = "<li>No submissions yet.</li>";
+        alert("All customer requests cleared!");
+    }
+});
+</script>
+<script>
+// Logout button
+document.getElementById('logout-btn').addEventListener('click', function() {
+    const message = document.getElementById('login-message');
+    const requestsDiv = document.getElementById('customer-requests');
+    const passwordInput = document.getElementById('admin-password');
+
+    requestsDiv.style.display = "none";
+    message.style.color = "blue";
+    message.textContent = "Logged out successfully.";
+    passwordInput.value = "";
+
+    alert("You have been logged out.");
+});
+</script>
+
+
+ <footer>
+        &copy; 2025 Whisked Away. All rights reserved.
+    </footer>
+
 </body>
 </html>
+
