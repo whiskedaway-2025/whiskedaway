@@ -1,0 +1,178 @@
+<html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Build Your Cake — Whisked Away</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="jimbob.png" alt="Whisked Away logo">
+      <div>
+        <h1>Whisked Away</h1>
+        <p>Delighting taste buds, one whisk at a time</p>
+      </div>
+    </div>
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" data-page="index.html">Home</a>
+      <a href="about.html" data-page="about.html">About</a>
+      <a href="products.html" data-page="products.html">Products</a>
+      <a href="custom.html" data-page="custom.html">Build a Cake</a>
+      <a href="contact.html" data-page="contact.html">Contact</a>
+      <a href="admin.html" data-page="admin.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h2>Build Your Dream Cake <span style="font-weight:700; margin-left:6px;" data-tooltip="Choose your cake base (50+ options), then flavour and size. Include your e-mail in the notes so we can confirm price & pickup/delivery.">*</span></h2>
+    <p class="kicker">We’ll estimate a price instantly — finish the form and we save the request locally for you to submit.</p>
+
+    <form id="cake-form" class="admin-panel" aria-label="Cake builder form">
+      <div class="form-row">
+        <label for="cake-type">Cake Type</label>
+        <select id="cake-type" required>
+          <option value="">-- Select cake base --</option>
+          <option value="sponge">Sponge Cake</option>
+          <option value="chocolate">Chocolate Cake</option>
+          <option value="redvelvet">Red Velvet</option>
+          <option value="carrot">Carrot Cake</option>
+          <option value="banana">Banana Cake</option>
+          <option value="lemon">Lemon Cake</option>
+          <option value="biscoff">Biscoff</option>
+          <option value="nutella">Nutella</option>
+          <!-- (trimmed list) add the rest the same way -->
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="flavour">Flavour</label>
+        <select id="flavour" required>
+          <option value="">-- Select flavour --</option>
+          <option value="vanilla">Vanilla</option>
+          <option value="chocolate">Chocolate</option>
+          <option value="strawberry">Strawberry</option>
+          <option value="biscoff">Biscoff</option>
+          <option value="nutella">Nutella</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="size">Size</label>
+        <select id="size" required>
+          <option value="">-- Select size --</option>
+          <option value="6">6 inch</option>
+          <option value="8">8 inch</option>
+          <option value="10">10 inch</option>
+          <option value="cupcakex12">Cupcakes (12)</option>
+          <option value="cupcakex24">Cupcakes (24)</option>
+          <option value="tiered2">Tiered (2)</option>
+        </select>
+        <small class="hint">Pricing is estimated — final confirmed by email.</small>
+      </div>
+
+      <div class="form-row">
+        <label>Extras (each ~£3)</label>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; max-width:640px;">
+          <label><input type="checkbox" name="extras" value="fondant"> Fondant Top</label>
+          <label><input type="checkbox" name="extras" value="ediblegold"> Edible Gold</label>
+          <label><input type="checkbox" name="extras" value="custommessage"> Custom Message</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="notes">Additional Notes (include e-mail)</label>
+        <textarea id="notes" placeholder="Delivery/pickup date, contact email, cake message..."></textarea>
+      </div>
+
+      <div class="form-row">
+        <div id="quote" aria-live="polite">Estimated Price: —</div>
+      </div>
+
+      <div class="form-row" style="justify-content:center;">
+        <button type="submit" class="btn btn-primary">Submit Your Custom Cake</button>
+        <button type="button" id="save-draft" class="btn btn-outline" style="margin-left:10px;">Save Draft</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    &copy; 2025 Whisked Away
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+/* local form logic kept, improved */
+const basePrice = 15;
+const markup = 1.7;
+
+function calcPrice(){
+  const size = document.getElementById('size').value;
+  let sizeMultiplier = 1;
+  if (size === "8") sizeMultiplier = 1.5;
+  else if (size === "10") sizeMultiplier = 2;
+  else if (size === "cupcakex12") sizeMultiplier = 1.5;
+  else if (size === "cupcakex24") sizeMultiplier = 2.5;
+  else if (size === "tiered2") sizeMultiplier = 2.7;
+
+  const extras = Array.from(document.querySelectorAll('input[name="extras"]:checked')).length;
+  const extrasCost = extras * 3;
+  const final = ((basePrice * sizeMultiplier + extrasCost) * markup);
+  if (isNaN(final)) return null;
+  return final.toFixed(2);
+}
+
+document.getElementById('cake-form').addEventListener('change', () => {
+  const q = calcPrice();
+  document.getElementById('quote').textContent = q ? `Estimated Price: £${q}` : `Estimated Price: —`;
+});
+
+// Save draft button
+document.getElementById('save-draft').addEventListener('click', () => {
+  const draft = {
+    cakeType: document.getElementById('cake-type').value,
+    flavour: document.getElementById('flavour').value,
+    size: document.getElementById('size').value,
+    extras: Array.from(document.querySelectorAll('input[name="extras"]:checked')).map(i=>i.value),
+    notes: document.getElementById('notes').value,
+    timestamp: Date.now()
+  };
+  localStorage.setItem('cakeDraft', JSON.stringify(draft));
+  alert('Draft saved locally. It will remain in your browser until you clear it.');
+});
+
+// submit -> save to localStorage array (customer requests)
+document.getElementById('cake-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const draft = {
+    cakeType: document.getElementById('cake-type').value,
+    flavour: document.getElementById('flavour').value,
+    size: document.getElementById('size').value,
+    extras: Array.from(document.querySelectorAll('input[name="extras"]:checked')).map(i=>i.value),
+    notes: document.getElementById('notes').value,
+    priceEstimate: calcPrice(),
+    submittedAt: new Date().toISOString()
+  };
+  if (!draft.notes || !draft.notes.includes('@')) {
+    if (!confirm('You have not included an e-mail address in the notes. We recommend adding one so we can contact you. Still submit?')) {
+      return;
+    }
+  }
+  const list = JSON.parse(localStorage.getItem('cakeSubmissions') || '[]');
+  list.push(draft);
+  localStorage.setItem('cakeSubmissions', JSON.stringify(list));
+  alert('Request saved. We will contact you by the email you provided.');
+  this.reset();
+  document.getElementById('quote').textContent = 'Estimated Price: —';
+});
+</script>
+</body>
+</html>
