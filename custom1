@@ -20,10 +20,11 @@
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="products.html">Products</a>
-  <a href="custom.html">Custom Cakes</a>
+  <a href="custom.html" class="highlight">Custom Cake Builder</a>
   <a href="contact.html">Contact</a>
   <a href="admin.html">Admin</a>
 </nav>
+
 <section id="custom-cake" class="custom-cake">
     <h2>
         Build Your Dream Cake
